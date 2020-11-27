@@ -8,7 +8,7 @@ const Shortener = require('../../models/shortUrl')
 // 產生隨機5碼英數組合字串
 const generateOutput = require('../../public/generateOutput')
 // 解析 port 當前的狀態 決定要回傳那個 host
-const host = 'http://localhost:3000/shortener/'
+const host = process.env.PORT ? 'https://vast-springs-68448.herokuapp.com/shortener/' : 'http://localhost:3000/shortener/'
 
 
 // 定義首頁路由

@@ -1,6 +1,7 @@
 # 短網址產生器 - URL-shortener
 
 使用者可以在首頁表單輸入原始網址，將會回傳格式化後的短網址，在伺服器啟動期間，使用者在瀏覽器的網址列，輸入你提供的短網址，瀏覽器就會導向原本的網站。
+[HEROKU 網址](https://vast-springs-68448.herokuapp.com/)
 ![](/2_3A14URL_Shortener.png)
 
 ## Features - 產品功能

@@ -26,24 +26,12 @@
   </h3>
   {{/if_equal}}
   <form action="/" class="d-flex justify-content-center" method="POST">
-
     <div class="" style="width: 800px;">
       <div class="row">
         <div class="col-12">
           <input type="url" id="url-input" class="form-control mb-4" placeholder="Input URL Here"
             value="{{#if option.shortName}} {{option.host}}{{ option.shortName }} {{/if}}" name="hostName" required
             {{#if option.shortName}} style="color: blue;" readonly {{/if}}>
-          {{!-- {{#unless option.shortName}}
-        <button type="submit" class="col-8 col-sm-4 btn btn-primary">
-          Shorten
-        </button>
-        <a class="btn btn-success ml-3" style="text-center; text-decoration:none;" href="/">Clear</a>
-        {{/unless}}
-        {{#if option.shortName}}
-        <a onclick="copyOnClick()" id="copy-button" class="col-8 col-sm-4 btn btn-info">
-          Copy
-        </a>
-        {{/if}} --}}
         </div>
       </div>
       <div class="row">
