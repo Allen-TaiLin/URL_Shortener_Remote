@@ -1,37 +1,67 @@
-<div class="container p-5">
-  <div href="/" class="row mb-5 justify-content-center">
+<div class="container p-4">
+  <div href="/" class="row mb-3 justify-content-center">
     <h1>URL Shortener</h1>
   </div>
-  <div href="/" class="row justify-content-center mb-5">
+  <div href="/" class="text-center mb-3" style="font-size: 90px;">
     <a class="col-6 col-sm-4 col-md-3" href="/">
-      <img class="mw-100" src="https://www.flaticon.com/svg/static/icons/svg/3221/3221956.svg" alt="chain">
+      <span class="fa-stack fa-2x">
+        <i class="fas fa-circle fa-stack-2x" style="color: rgba(0, 140, 255, 0.795);"></i>
+        <i class="fas fa-recycle fa-stack-1x fa-spin" style="color: gold;"></i>
+      </span>
     </a>
   </div>
-  <div class="row justify-content-center mt-5 mb-2 text-monospace text-muted">
-    click the logo to reset input
+  <div class="text-center mt-5 mb-2 mb-4 text-monospace text-muted">
+    User can click the logo to reset input
   </div>
   {{#if_equal option.status 'success'}}
   <h3 class="text-center text-success">
+    <i class="far fa-hand-point-down mr-3"></i>
     Success! Please use this link：
   </h3>
   {{/if_equal}}
   {{#if_equal option.status 'danger'}}
   <h3 class="text-center text-danger">
-    Please re-enter the URL has expired
+    <i class="fas fa-radiation-alt mr-3"></i>
+    Please re-enter the URL has expired!
   </h3>
   {{/if_equal}}
-  <form action="/" class="row justify-content-center" method="POST">
-    <input type="url" id="url-input" class="form-control mb-5" placeholder="Input URL Here"
-      value="{{#if option.shortName}} {{option.host}}{{ option.shortName }} {{/if}}" name="hostName" required>
-    {{#unless option.shortName}}
-    <button type="submit" class="col-8 col-sm-4 btn btn-primary">
-      Shorten
-    </button>
-    {{/unless}}
-    {{#if option.shortName}}
-    <a onclick="copyOnClick()" id="copy-button" class="col-8 col-sm-4 btn btn-info">
-      Copy
-    </a>
-    {{/if}}
+  <form action="/" class="d-flex justify-content-center" method="POST">
+
+    <div class="" style="width: 800px;">
+      <div class="row">
+        <div class="col-12">
+          <input type="url" id="url-input" class="form-control mb-4" placeholder="Input URL Here"
+            value="{{#if option.shortName}} {{option.host}}{{ option.shortName }} {{/if}}" name="hostName" required
+            {{#if option.shortName}} style="color: blue;" readonly {{/if}}>
+          {{!-- {{#unless option.shortName}}
+        <button type="submit" class="col-8 col-sm-4 btn btn-primary">
+          Shorten
+        </button>
+        <a class="btn btn-success ml-3" style="text-center; text-decoration:none;" href="/">Clear</a>
+        {{/unless}}
+        {{#if option.shortName}}
+        <a onclick="copyOnClick()" id="copy-button" class="col-8 col-sm-4 btn btn-info">
+          Copy
+        </a>
+        {{/if}} --}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          {{#unless option.shortName}}
+          <button type="submit" class="col-8 col-sm-4 btn btn-primary">
+            Shorten
+          </button>
+          <a class="btn btn-success ml-3" style="text-center; text-decoration:none;" href="/">Clear</a>
+          {{/unless}}
+          {{#if option.shortName}}
+          <a onclick="copyOnClick()" id="copy-button" class="col-8 col-sm-4 btn btn-info">
+            Copy
+          </a>
+          <a class="btn btn-success ml-3" style="text-center; text-decoration:none;" href="/">Back</a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
   </form>
 </div>
